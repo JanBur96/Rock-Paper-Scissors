@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Orbitron', sans-serif;
+  --bg-light: #3c1361;
+  --font-light: #cfff04;
+  --alt-color: #ea0e53;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  padding: 30px;
+  background: var(--bg-light);
+  color: var(--font-light);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.upperContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--font-light);
+  text-align: center;
+}
+
+
+.round {
+  display: flex;
+  color: var(--alt-color);
+  margin-left: 40px;
+  font-size: 30px;
+}
+
+.scorePlayer,
+.scoreComputer {
+  display: flex;
+  margin-top: 40px;
+}
+
+.scorePlayer h3 {
+  margin-right: 15px;
+}
+
+.scoreComputer h3 {
+  margin-right: 15px;
+}
+
+.round h3 {
+  margin-right: 15px;
+}
+
+.computerChoose {
+  height: 301px;
+  width: 236px;
+  text-align: center;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.computerChoose h3 {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+.computerChoose i {
+  height: 220px;
+  width: 220px;
+  font-size: 150px;
+  border-radius: 50%;
+  padding: 30px;
+  color: var(--alt-color);
+}
+
+.playerChoose {
+  height: 301px;
+  width: 236px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.playerChoose h3 {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+.playerChoose i {
+  height: 220px;
+  width: 220px;
+  font-size: 150px;
+  border-radius: 50%;
+  padding: 30px;
+  color: var(--alt-color);
+}
+
+.results {
+  justify-self: center;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 5px solid var(--font-light);
+  margin: 10px 200px 0 200px;
+  text-align: center;
+}
+
+.btns * {
+  margin: 20px 10px 0 10px;
+  padding: 2.5px 10px 10px 8px;
+  background: var(--bg-light);
+  color: var(--font-light);
+  border-radius: 10px;
+  font-size: 70px;
+  text-align: center;
+  height: 80;
+  cursor: pointer;
+}
+
+.rock,
+.paper,
+.scissors {
+  border: 5px solid var(--alt-color);
+  transition: all .5s;
+}
+
+.rock:hover,
+.paper:hover,
+.scissors:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
+.reload {
+  align-self: flex-end;
+}
+
+.bottom {
+  display: flex;
+  position: relative;
+}
+
+.chooseOne {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 25px;
+}

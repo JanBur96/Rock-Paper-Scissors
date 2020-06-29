@@ -1,127 +1,192 @@
-function play2() {
-  let round = 0;
-  let computerScore = 0;
-  let playerScore = 0;
+// Variables
+const rock = document.querySelector('.rock')
+const paper = document.querySelector('.paper')
+const scissors = document.querySelector('.scissors')
+const btns = document.querySelector('.btns')
+let results = document.querySelector('.results')
+let computerChoose = document.querySelector('.computerChoose')
+let playerChoose = document.querySelector('.playerChoose')
 
-  for(let i = 0; i < 5; i++) {
-    result = letsPlay();
-    console.log(result)
-    
-    if(result == "Computer wins!") {
-      computerScore += 1;
-      round += 1;
-    } else if (result == "Player wins!") {
-      playerScore += 1;
-      round += 1;
-    } else {
-      round += 1;
+let domRound = document.querySelector('.round')
+let scoreComputer = document.querySelector('.scoreComputer')
+let scorePlayer = document.querySelector('.scorePlayer')
+let reload = document.querySelector('.reload')
+
+let currentRound = document.createElement('h3')
+let scoreComputerDisplay = document.createElement('h3')
+let scorePlayerDisplay = document.createElement('h3')
+
+let playerChose;
+let computerResult = document.createElement('h3')
+let playerResult = document.createElement('h3')
+
+currentRound.textContent = "0"
+domRound.appendChild(currentRound)
+
+scoreComputerDisplay.textContent = "0"
+scoreComputer.appendChild(scoreComputerDisplay)
+scorePlayerDisplay.textContent = "0"
+scorePlayer.appendChild(scorePlayerDisplay)
+
+let icon = document.createElement('i')
+let icon2 = document.createElement('i')
+
+let round = 0;
+let computerScore = 0;
+let playerScore = 0;
+
+// Listener
+rock.addEventListener('click', () => {
+  playerChose = "rock"
+  letsPlay()
+})
+
+paper.addEventListener('click', () => {
+  playerChose = "paper"
+  letsPlay()
+})
+
+scissors.addEventListener('click', () => {
+  playerChose = "scissors"
+  letsPlay()
+})
+
+reload.addEventListener('click', () => {
+  location.reload()
+})
+
+
+// Game 
+function letsPlay() {
+
+  // Computer output
+  function computerPlay () {
+    let number;
+    let computer;
+  
+    number = Math.floor(Math.random() * 3);
+  
+    switch (number) {
+      case 0:
+        computer = "rock";
+        icon.className = `far fa-hand-${computer}`
+        computerChoose.appendChild(icon)
+        break;
+      case 1:
+        computer = "scissors";
+        icon.className = `far fa-hand-${computer}`
+        computerChoose.appendChild(icon)
+        break;
+      case 2:
+        computer = "paper";
+        icon.className = `far fa-hand-${computer}`
+        computerChoose.appendChild(icon)
+        break;
     }
-
-    console.log("It's round " + round)
-    console.log("Computer Score: " + computerScore)
-    console.log("Player Score: " + playerScore)
+  
+    return computer;
   }
 
-  // Game itself
-  function letsPlay() {
-
-    // Computer output
-    function computerPlay () {
-      let number;
-      let computer;
-    
-      number = Math.floor(Math.random() * 3);
-    
-      switch (number) {
-        case 0:
-          computer = "rock";
-          break;
-        case 1:
-          computer = "scissors";
-          break;
-        case 2:
-          computer = "paper";
-          break;
-      }
-    
-      return computer;
+  // Player output
+  function playerPlay () {
+    let player;
+  
+    switch (playerChose) {
+      case "rock":
+        player = "rock";
+        icon2.className = `far fa-hand-${player}`
+        playerChoose.appendChild(icon2)
+        break;
+      case "scissors":
+        player = "scissors";
+        icon2.className = `far fa-hand-${player}`
+        playerChoose.appendChild(icon2)
+        break;
+      case "paper":
+        player = "paper";
+        icon2.className = `far fa-hand-${player}`
+        playerChoose.appendChild(icon2)
+        break;
+      default:
+        alert('Sorry, your input is invalid.')
     }
   
-    // Player output
-    function playerPlay () {
-      let player;
-    
-      switch (prompt("rock, paper or scissors?").toLocaleLowerCase()) {
-        case "rock":
-          player = "rock";
-          break;
-        case "scissors":
-          player = "scissors";
-          break;
-        case "paper":
-          player = "paper";
-          break;
-        default:
-          alert('Sorry, your input is invalid.')
-      }
-    
-      return player
-    }
-  
-    let computer = computerPlay();
-    let player = playerPlay();
-    console.log("Computer chooses " + computer)
-    console.log("Player chooses " + player)
-  
-  
-    // Who won?
-    function play(computer, player) {
-  
-      // Draw
-      if (computer == player) {
-        return "Draw";
-      }
-    
-      // Computer wins
-        else if (computer == "paper" && player == "rock") {
-          return "Computer wins!"
-        }
-    
-        else if (computer == "scissors" && player == "paper") {
-          return "Computer wins!"
-        }
-    
-        else if (computer == "rock" && player == "scissors") {
-          return "Computer wins!"
-        }
-    
-      // Player wins
-        else if (player == "paper" && computer == "rock") {
-          return "Player wins!"
-        }
-    
-        else if (player == "scissors" && computer == "paper") {
-          return "Player wins!"
-        }
-    
-        else if (player == "rock" && computer == "scissors") {
-          return "Player wins!"
-        }
-    
-    }
-  
-    let result = play(computer, player)
-    return result;
+    return player
   }
+
+  let computer = computerPlay();
+  let player = playerPlay();
+  console.log("Computer chooses " + computer)
+  console.log("Player chooses " + player)
+
+
+  // Who won?
+  function play(computer, player) {
+
+    // Draw
+    if (computer == player) {
+      return "Draw";
+    }
   
-  if(computerScore > playerScore) {
-    alert("Computer won!")
-  } else if (playerScore > computerScore) {
-    alert("Player won!")
+    // Computer wins
+      else if (computer == "paper" && player == "rock") {
+        return "Computer wins!"
+      }
+  
+      else if (computer == "scissors" && player == "paper") {
+        return "Computer wins!"
+      }
+  
+      else if (computer == "rock" && player == "scissors") {
+        return "Computer wins!"
+      }
+  
+    // Player wins
+      else if (player == "paper" && computer == "rock") {
+        return "Player wins!"
+      }
+  
+      else if (player == "scissors" && computer == "paper") {
+        return "Player wins!"
+      }
+  
+      else if (player == "rock" && computer == "scissors") {
+        return "Player wins!"
+      }
+  
+  }
+
+  let result = play(computer, player)
+  
+  if(result == "Computer wins!") {
+    computerScore += 1;
+    round += 1;
+    scoreComputerDisplay.textContent = computerScore;
+    currentRound.textContent = round;
+  } else if (result == "Player wins!") {
+    playerScore += 1;
+    round += 1;
+    scorePlayerDisplay.textContent = playerScore;
+    currentRound.textContent = round;
   } else {
-    alert("It's a draw!")
+    round += 1;
+    currentRound.textContent = round;
+  }
+  
+  if (round === 5 && computerScore > playerScore) {
+    alert('The Computer has won. Try again!')
+    location.reload()
+  } else if (round === 5 && playerScore > computerScore) {
+    alert('Congratulations, you have won!')
+    location.reload()
+  } else if (round === 5 && playerScore === computerScore) {
+    alert('It\'s a draw. Try again!')
+    location.reload()
   }
 
-  return "Game ends :)"
+
+  console.log("It's round " + round)
+  console.log("Computer Score: " + computerScore)
+  console.log("Player Score: " + playerScore)
 
 }
