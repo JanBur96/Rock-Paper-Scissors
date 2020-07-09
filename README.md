@@ -4,9 +4,9 @@ This is a project I'm very proud of. It's my first "own" project, which I made w
 
 You are the "Player" and your opponent ist the computer. You have to choose Rock, Paper or Scissors and the computer chooses for himself.
 
-Rock > Scissors
-Scissors > Paper
-Paper > Rock
+Rock beats Scissors
+Scissors beats Paper
+Paper beats Rock
 
 The winner is who got the most points out of five rounds, a draw is also possible.
 
