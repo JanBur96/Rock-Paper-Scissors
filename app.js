@@ -3,19 +3,19 @@ const rock = document.querySelector('.rock')
 const paper = document.querySelector('.paper')
 const scissors = document.querySelector('.scissors')
 const btns = document.querySelector('.btns')
-let results = document.querySelector('.results')
-let computerChoose = document.querySelector('.computerChoose')
-let playerChoose = document.querySelector('.playerChoose')
-
+let choices = document.querySelector('.choices')
+let computerChoice = document.querySelector('.computerChoice')
+let playerChoice = document.querySelector('.playerChoice')
 let domRound = document.querySelector('.round')
 let scoreComputer = document.querySelector('.scoreComputer')
 let scorePlayer = document.querySelector('.scorePlayer')
-let reload = document.querySelector('.reload')
+let newGame = document.querySelector('.newGame')
 
+
+// Create elements
 let currentRound = document.createElement('h3')
 let scoreComputerDisplay = document.createElement('h3')
 let scorePlayerDisplay = document.createElement('h3')
-
 let playerChose;
 let computerResult = document.createElement('h3')
 let playerResult = document.createElement('h3')
@@ -35,26 +35,6 @@ let round = 0;
 let computerScore = 0;
 let playerScore = 0;
 
-// Listener
-rock.addEventListener('click', () => {
-  playerChose = "rock"
-  letsPlay()
-})
-
-paper.addEventListener('click', () => {
-  playerChose = "paper"
-  letsPlay()
-})
-
-scissors.addEventListener('click', () => {
-  playerChose = "scissors"
-  letsPlay()
-})
-
-reload.addEventListener('click', () => {
-  location.reload()
-})
-
 
 // Game 
 function letsPlay() {
@@ -70,20 +50,20 @@ function letsPlay() {
       case 0:
         computer = "rock";
         icon.className = `far fa-hand-${computer}`
-        computerChoose.appendChild(icon)
+        computerChoice.appendChild(icon)
         break;
       case 1:
         computer = "scissors";
         icon.className = `far fa-hand-${computer}`
-        computerChoose.appendChild(icon)
+        computerChoice.appendChild(icon)
         break;
       case 2:
         computer = "paper";
         icon.className = `far fa-hand-${computer}`
-        computerChoose.appendChild(icon)
+        computerChoice.appendChild(icon)
         break;
     }
-  
+    
     return computer;
   }
 
@@ -95,17 +75,17 @@ function letsPlay() {
       case "rock":
         player = "rock";
         icon2.className = `far fa-hand-${player}`
-        playerChoose.appendChild(icon2)
+        playerChoice.appendChild(icon2)
         break;
       case "scissors":
         player = "scissors";
         icon2.className = `far fa-hand-${player}`
-        playerChoose.appendChild(icon2)
+        playerChoice.appendChild(icon2)
         break;
       case "paper":
         player = "paper";
         icon2.className = `far fa-hand-${player}`
-        playerChoose.appendChild(icon2)
+        playerChoice.appendChild(icon2)
         break;
       default:
         alert('Sorry, your input is invalid.')
@@ -116,9 +96,6 @@ function letsPlay() {
 
   let computer = computerPlay();
   let player = playerPlay();
-  console.log("Computer chooses " + computer)
-  console.log("Player chooses " + player)
-
 
   // Who won?
   function play(computer, player) {
@@ -153,7 +130,6 @@ function letsPlay() {
       else if (player == "rock" && computer == "scissors") {
         return "Player wins!"
       }
-  
   }
 
   let result = play(computer, player)
@@ -183,10 +159,24 @@ function letsPlay() {
     alert('It\'s a draw. Try again!')
     location.reload()
   }
-
-
-  console.log("It's round " + round)
-  console.log("Computer Score: " + computerScore)
-  console.log("Player Score: " + playerScore)
-
 }
+
+// Listener
+rock.addEventListener('click', () => {
+  playerChose = "rock"
+  letsPlay()
+})
+
+paper.addEventListener('click', () => {
+  playerChose = "paper"
+  letsPlay()
+})
+
+scissors.addEventListener('click', () => {
+  playerChose = "scissors"
+  letsPlay()
+})
+
+newGame.addEventListener('click', () => {
+  location.reload()
+})
