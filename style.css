@@ -14,11 +14,11 @@
 html, body {
   height: 100%;
   width: 100%;
-  overflow: hidden;
 }
 
 body {
   font-family: 'Orbitron', sans-serif;
+  background-color: var(--bg-light);
 }
 
 .container {
@@ -138,4 +138,5 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 25px;
+  margin-top: 10px;
 }
