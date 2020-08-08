@@ -14,129 +14,108 @@
 html, body {
   height: 100%;
   width: 100%;
+  font-size: 62.5%;
+  color: white;
 }
 
 body {
   font-family: 'Orbitron', sans-serif;
   background-color: var(--bg-light);
+  color: var(--font-light);
+}
+
+h3 {
+  margin-right: 1rem;
 }
 
 .container {
   height: 100%;
   width: 100%;
-  padding: 30px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  color: var(--font-light);
-  background: var(--bg-light);
+  padding: 2rem;
 }
 
-
-/********** Infos **********/
 .infos {
+  width: 100%;
+  height: 6rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  font-size: 2.4rem;
+  text-align: center;
+  border-bottom: 5px solid ;
 }
 
 .round {
-  margin-left: 40px;
-  display: flex;
-  font-size: 30px;
-  color: var(--alt-color);
+  margin-left: 5rem;
 }
 
 .scorePlayer,
+.round,
 .scoreComputer {
   display: flex;
 }
 
-.scorePlayer h3,
-.scoreComputer h3,
-.round h3 {
-  margin-right: 15px;
+.round {
+  color: var(--alt-color);
 }
 
-/********** Choices **********/
 .choices {
-  justify-self: center;
+  padding-top: 2.5rem;
+  width: 100%;
+  height: 74rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 3.2rem;
+  text-align: center;
 }
 
 .computerChoice,
 .playerChoice {
-  margin-bottom: 50px;
-  height: 300px;
-  width: 235px;
+  height: 50rem;
+  width: 23rem;
   text-align: center;
 }
 
 .computerChoice h3,
 .playerChoice h3 {
-  font-size: 50px;
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
 }
 
 .computerChoice i,
 .playerChoice i {
-  height: 220px;
-  width: 220px;
-  font-size: 150px;
-  border-radius: 50%;
-  padding: 30px;
+  font-size: 15rem;
+  padding-top: 5rem;
   color: var(--alt-color);
 }
 
 
-/********** Buttons **********/
 .btns {
+  height: 15rem;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 5px solid var(--font-light);
-  margin: 10px 200px 0 200px;
-  text-align: center;
-}
-
-.btns * {
-  margin: 20px 10px 0 10px;
-  padding: 2.5px 10px 10px 8px;
-  background: var(--bg-light);
-  color: var(--font-light);
-  border-radius: 10px;
-  font-size: 70px;
-  text-align: center;
-  cursor: pointer;
+  font-size: 7rem;
+  border-top: 5px solid;
 }
 
 .rock,
 .paper,
 .scissors {
-  border: 5px solid var(--alt-color);
-  transition: all .5s;
+  margin: 0 1rem;
+  border: 3px solid var(--alt-color);
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  cursor: pointer;
 }
 
-.rock:hover,
-.paper:hover,
-.scissors:hover {
-  transform: scale(1.05) translateY(-5px);
-}
-
-/********** Bottom **********/
 .bottom {
+  height: 5rem;
   display: flex;
-  position: relative;
-}
-
-.newGame {
-  align-self: flex-end;
-}
-
-.chooseOne {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 25px;
-  margin-top: 10px;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-size: 1.8rem;
 }
