@@ -120,21 +120,41 @@ h3 {
   font-size: 1.8rem;
 }
 
-@media (max-width: 855px) {
+.newGame {
+  cursor: pointer;
+  transition: .35s;
+}
+
+.newGame:hover {
+  color: var(--alt-color);
+}
+
+@media (max-width: 855px), (max-height: 840px) {
   .infos {
     font-size: 1.8rem;
   }
+
+  .computerChoice i,
+  .playerChoice i {
+  font-size: 10rem;
 }
 
-@media (max-width: 640px) {
 
+}
+
+@media (max-width: 643px), (max-height: 730px) {
   html {
     font-size: 50%;
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 520px), (max-height: 560px) {
   html {
     font-size: 40%;
   }
+
+  @media (max-width: 412px), (max-height: 470px) {
+    html {
+      font-size: 30%;
+    }
 }
