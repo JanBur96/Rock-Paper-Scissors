@@ -1,4 +1,4 @@
-![A picture of the rock paper scissors game](https://i.imgur.com/mFzmmwV.png)
+![A picture of the rock paper scissors game](https://i.imgur.com/8pMlpOK.png)
 
 # Rock-Paper Scissors
 
