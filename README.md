@@ -1,4 +1,6 @@
-## Rock-Paper Scissors
+![A picture of the rock paper scissors game](https://i.imgur.com/mFzmmwV.png)
+
+# Rock-Paper Scissors
 
 This is a project I'm very proud of. It's my first "own" project, which I made without help, tutorials or similar.
 
