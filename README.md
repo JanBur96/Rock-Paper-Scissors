@@ -2,7 +2,7 @@
 
 # Rock-Paper Scissors
 
-This is a project I'm very proud of. It's my first "own" project, which I made without help, tutorials or similar.
+This is a project I'm very proud of. It's my first "own" project, which I made without help, tutorials or similar, so I'm very proud of it.
 
 You are the "Player" and your opponent ist the computer. You have to choose Rock, Paper or Scissors and the computer chooses for himself.
 
